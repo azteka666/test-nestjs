@@ -9,7 +9,7 @@ import { RruleStringScalar } from './common/scalars/rruleString.scalar';
   imports: [
     TypeOrmModule.forRoot(),
     GraphQLModule.forRoot({
-      autoSchemaFile: 'src/schema.gql',
+      autoSchemaFile: true,
       debug: process.env.NODE_ENV === 'development',
     }),
     EventsModule,
