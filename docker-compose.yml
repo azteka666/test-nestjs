@@ -21,7 +21,6 @@ services:
       - mongodb
     networks:
       - mynet
-    command: "yarn run start:dev"
 
   mongodb:
     container_name: ${MONGO_HOST}

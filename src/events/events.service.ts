@@ -6,7 +6,7 @@ import { ListEventsEntity } from './entities/list-events.entity';
 import { EventRepository } from './repositories/event.repository';
 import { ServiceHelper } from '../common/helpers/service.helper';
 import { UpdateEventInput } from './dto/update-event-input.dto';
-import { FindEventDto } from '../common/dto/find-event.dto';
+import { FindEventDto } from './dto/find-event.dto';
 
 @Injectable()
 export class EventsService {
@@ -60,6 +60,12 @@ export class EventsService {
   }
 
   async deleteEvent(id: string): Promise<boolean> {
+    const event = await this.findEventById(id);
+
+    if (!event) {
+      throw new NotFoundException(id);
+    }
+
     await this.eventRepository.delete(id);
 
     return true;

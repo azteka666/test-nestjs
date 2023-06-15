@@ -2,12 +2,11 @@ import { ID } from 'type-graphql';
 import { NotFoundException } from '@nestjs/common';
 import { Query, Mutation, Args, Resolver } from '@nestjs/graphql';
 import { EventEntity as Event } from './entities/event.entity';
-import { ListEventsEntity as listEvents } from './entities/list-events.entity';
+import { ListEventsEntity as ListEvents } from './entities/list-events.entity';
 import { CreateEventDto } from './dto/create-event.dto';
 import { UpdateEventDto } from './dto/update-event.dto';
 import { FindEventsDto } from './dto/find-events.dto';
 import { EventsService } from './events.service';
-import { UpdateEventInput } from './dto/update-event-input.dto';
 
 @Resolver(of => Event)
 export class EventsResolver {
@@ -24,8 +23,8 @@ export class EventsResolver {
     return event;
   }
 
-  @Query(returns => listEvents)
-  events(@Args() queryArgs: FindEventsDto): Promise<listEvents> {
+  @Query(returns => ListEvents)
+  events(@Args() queryArgs: FindEventsDto): Promise<ListEvents> {
     return this.eventsService.findEvents(queryArgs);
   }
 
@@ -36,7 +35,7 @@ export class EventsResolver {
 
   @Mutation(returns => Event)
   updateEvent(@Args() mutationArgs: UpdateEventDto): Promise<Event> {
-    const { id, eventInput }: { id: string; eventInput: UpdateEventInput } = mutationArgs;
+    const { id, eventInput } = mutationArgs;
 
     return this.eventsService.updateEvent(id, eventInput);
   }

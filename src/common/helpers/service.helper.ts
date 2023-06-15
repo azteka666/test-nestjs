@@ -35,7 +35,7 @@ export class ServiceHelper {
     };
   }
 
-  async findAllEvents(dto: FindEventsDto, repository: Repository<any>): Promise<any> {
+  async findAllEvents<T extends { rrule: string }>(dto: FindEventsDto, repository: Repository<T>): Promise<{items: T[]}> {
     const { startDate, endDate, order, fieldSort }: FindEventsDto = dto;
     const $order: findOrder = { [fieldSort]: order };
     const $where = this.getWhereByStartDateAndEndDate(startDate, endDate);

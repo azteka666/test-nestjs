@@ -1,6 +1,6 @@
-import { Max, Min, IsDateString } from 'class-validator';
+import { IsDateString } from 'class-validator';
 import { ArgsType, Field, Int, ID } from 'type-graphql';
-import { order } from '../types/order.type';
+import { order } from '../../common/types/order.type';
 
 @ArgsType()
 export class FindEventDto {

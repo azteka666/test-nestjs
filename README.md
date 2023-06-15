@@ -4,19 +4,19 @@
 
 ```
 $ Git --version
->= v2.19
+>= v2.35.1
 
 $ Docker --version
->= v19.03.5
+>= v20.10.23
 
 $ Docker Compose --version
->= v1.24.1
+>= v2.15.1
 
 $ node --version
->= v10.11.0
+>= v18.9.1
 
 $ NPM --version
->= v6.4.1
+>= v7.24.2
 
 ```
 ### How to run with Docker
@@ -67,3 +67,4 @@ RRule.js is a valuable tool when working with scheduling and event management sy
 ### Must have features in future
 Add authorization flow;
 Deploy to cloud;
+For error tracking and monitoring in production, connect firebase analytics, sentry or another analogue;
