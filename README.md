@@ -1,5 +1,10 @@
 ## BE
 
+### Must have features in future
+- Add authorization flow;
+- Deploy to cloud;
+- For error tracking and monitoring in production, connect firebase analytics, sentry or another analogue;
+
 ### Requirements
 
 ```
@@ -63,8 +68,3 @@ TypeORM simplifies database operations by abstracting away the underlying SQL sy
 ### Additional libraries
 --- RRule.js
 RRule.js is a valuable tool when working with scheduling and event management systems that involve recurring patterns. It provides a convenient and reliable way to handle various types of recurring events, such as daily, weekly, monthly, or yearly occurrences, as well as more complex patterns. RRule.js simplifies the implementation of recurrence rules, saving development time and ensuring accurate and consistent scheduling functionality.
-
-### Must have features in future
-Add authorization flow;
-Deploy to cloud;
-For error tracking and monitoring in production, connect firebase analytics, sentry or another analogue;
